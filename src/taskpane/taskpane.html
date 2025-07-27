@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Word Template Add-in</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <!-- <script src="../../lib/office.js"></script> -->
+
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #f0f2f5;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .container {
+        width: 600px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      h1 {
+        font-size: 1.5rem;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 5px;
+      }
+      select,
+      textarea,
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+      select:focus,
+      textarea:focus,
+      input[type="text"]:focus {
+        border-color: #4a90e2;
+        outline: none;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #loadTemplateBtn {
+        background-color: #4a90e2;
+      }
+      #loadTemplateBtn:hover {
+        background-color: #357abd;
+      }
+      #applyTemplateBtn {
+        background-color: #2ecc71;
+      }
+      #applyTemplateBtn:hover {
+        background-color: #27ae60;
+      }
+      #saveTemplateBtn {
+        background-color: #3498db;
+      }
+      #saveTemplateBtn:hover {
+        background-color: #2980b9;
+      }
+      #createTemplateBtn {
+        background-color: #9b59b6;
+      }
+      #createTemplateBtn:hover {
+        background-color: #8e44ad;
+      }
+      #saveWordToHtmlBtn {
+        background-color: #e74c3c;
+      }
+      #saveWordToHtmlBtn:hover {
+        background-color: #c0392b;
+      }
+      #uploadWordContentBtn {
+        background-color: #f1c40f;
+      }
+      #uploadWordContentBtn:hover {
+        background-color: #d4ac0d;
+      }
+      .button-group {
+        display: flex;
+        gap: 10px;
+      }
+      .button-group button {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>مدیریت قالب‌های ورد</h1>
+
+      <!-- انتخاب قالب -->
+      <div>
+        <label for="templateSelect">انتخاب قالب</label>
+        <select id="templateSelect">
+          <option value="">یک قالب انتخاب کنید</option>
+        </select>
+        <button id="loadTemplateBtn">بارگذاری قالب</button>
+      </div>
+
+      <!-- ویرایش قالب -->
+      <div>
+        <label for="templateContent">محتوای قالب</label>
+        <textarea id="templateContent" rows="6"></textarea>
+      </div>
+
+      <!-- دکمه‌های عملیات -->
+      <div class="button-group">
+        <button id="applyTemplateBtn">اعمال در ورد</button>
+        <button id="saveTemplateBtn">ذخیره قالب</button>
+      </div>
+
+      <!-- افزودن قالب جدید -->
+      <div>
+        <label for="newTemplateName">نام قالب جدید</label>
+        <input id="newTemplateName" type="text" placeholder="نام قالب جدید" />
+        <button id="createTemplateBtn">ایجاد قالب جدید</button>
+      </div>
+
+      <div>
+        <button id="uploadWordContentBtn">آپلود محتوای ورد</button>
+      </div>
+
+      <div>
+        <button id="saveWordToHtmlBtn">ذخیره محتوای ورد به HTML</button>
+      </div>
+      <div>
+        وضعیت : <span id="status_word"></span>
+      </div>
+    </div>
+    <script src="taskpane.js"></script>
+  </body>
+</html>

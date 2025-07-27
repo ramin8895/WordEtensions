@@ -1,0 +1,95 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container {
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+select,
+textarea,
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+select:focus,
+textarea:focus,
+input[type="text"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#loadTemplateBtn {
+  background-color: #4a90e2;
+}
+#loadTemplateBtn:hover {
+  background-color: #357abd;
+}
+#applyTemplateBtn {
+  background-color: #2ecc71;
+}
+#applyTemplateBtn:hover {
+  background-color: #27ae60;
+}
+#saveTemplateBtn {
+  background-color: #3498db;
+}
+#saveTemplateBtn:hover {
+  background-color: #2980b9;
+}
+#createTemplateBtn {
+  background-color: #9b59b6;
+}
+#createTemplateBtn:hover {
+  background-color: #8e44ad;
+}
+#saveWordToHtmlBtn {
+  background-color: #e74c3c;
+}
+#saveWordToHtmlBtn:hover {
+  background-color: #c0392b;
+}
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+.button-group button {
+  flex: 1;
+}
